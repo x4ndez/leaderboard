@@ -45,7 +45,7 @@ if (adminMode === 1) {
             e.target.textContent = "";
             e.target.append(el_lbInput);
 
-            scoreLastEdit = e.target;
+            scoreLastEdit = e.target; //Store last edit in a variable to be accessed on next click
 
         }
 
