@@ -21,11 +21,22 @@ for (let i in users) {
 
 }
 
+let scoreLastEdit = "";
+
+//If in admin mode
 if (adminMode === 1) {
 
+    //Score is editable onclick
     s_lbList.addEventListener("click", function (e) {
 
         if (e.target.getAttribute("class").includes("user-score")) {
+
+            //If the admin previously edited another score, make the previous edit, uneditable
+            if (scoreLastEdit) {
+
+                scoreLastEdit.textContent = scoreLastEdit.children[0].getAttribute("value");
+
+            }
 
             const el_lbInput = document.createElement("input");
             el_lbInput.setAttribute("type", "text");
@@ -34,9 +45,9 @@ if (adminMode === 1) {
             e.target.textContent = "";
             e.target.append(el_lbInput);
 
+            scoreLastEdit = e.target;
+
         }
-
-
 
     });
 
