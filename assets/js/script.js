@@ -2,6 +2,7 @@ const s_lbContainer = document.querySelector("#lb-container");
 const s_lbList = document.querySelector("#lb-ul");
 
 let adminMode = 1;
+let scoreLastEdit = "";
 
 for (let i in users) {
 
@@ -20,8 +21,6 @@ for (let i in users) {
 
 
 }
-
-let scoreLastEdit = "";
 
 //If in admin mode
 if (adminMode === 1) {
